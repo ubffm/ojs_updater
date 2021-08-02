@@ -24,7 +24,7 @@ backup yourself at least for the first time you run the tool!
 
 ### Prerequisites
 
-* A Linux (other *nix systems have not been tested; Windows Servers is currently NOT supported!)
+* A Linux (other *nix systems have not been tested; Windows Servers are currently NOT supported!)
 * MySQL/MariaDB (support for other databases is currently not implemented)
 * Python 3.6+ 
 * A running installation of OJS
@@ -40,6 +40,12 @@ Simply, clone the repository and install it on your server.
 git clone https://github.com/ubffm/ojs-updater.git
 cd ojs-updater
 pip install .
+```
+
+Alternatively, you cann install the package via pip:
+
+```
+pip install ojs_updater
 ```
 
 Now you should be able to simply run to get the help message:
