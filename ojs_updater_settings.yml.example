@@ -1,0 +1,81 @@
+## GENERAL ##
+
+# Whether to run in debug mode, hence having a more verbose output and skipping some processes like
+# the reset functionality! Do NOT set this true on a production OJS instance!
+debug: false
+
+# The system name of the owner of the OJS directory where the OJS instance to upgrade lives in and all its subfolders.
+# Usually, this is the user under which the webserver runs.
+owner: wwwrun
+
+# The system name of the owner group of the OJS directory where the OJS instance to upgrade lives in and all its subfolders.
+# Usually, this is the group under which the webserver runs.
+group: www
+
+## OJS ##
+
+# The relative path to the version XML file within the OJS instance. This is mainly for determining the version of the given
+# OJS instance. Normally, this should not need any adaption!
+version_file: &version_file dbscripts/xml/version.xml
+
+# The relative path to the configuration file within the OJS instance. Normally, this should not need any adaption!
+config_file: &config_file config.inc.php
+
+# This is a list of relative paths that will be checked, to determine, if the given directory is an OJS instance.
+# Normally, this should not need any adaption!
+locations:
+  - *version_file
+  - *config_file
+
+## SYSTEM ##
+
+# The absolute path to the directory, where all downloaded OJS versions live. CAUTION! This is NOT the directory of
+# the productive OJS instances but only the place where the OJS Updater can find the newest version of OJS and copy it.
+ojs_version_folder: /usr/local/ojs/versions/
+
+# The absolute path to the directory, where any backup of the OJS instances will be placed by the OJS Updater. This
+# will be subdivided for backups for the database and the OJS directory.
+ojs_backup_folder: /usr/local/ojs/backup/
+
+# The absolute path to the directory where all database backups should be placed. This HAS TO be a subfolder of the key
+# `ojs_backup_folder`.
+ojs_backup_db: /usr/local/ojs/backup/db
+
+# The absolute path to the directory where all OJS directory backups should be placed. This HAS TO be a subfolder of the key
+# `ojs_backup_folder`.
+ojs_backup_www: /usr/local/ojs/backup/htdocs
+
+# The formatting of the timestamp that is placed on all backups. Normally, this should not need any adaption!
+timestamp_format: '%Y%m%d_%H%M'
+
+# The suffix that is appended to all files that are copied over from the old OJS directory to the new version and are
+# duplicates of existing files in the new version. Hence, the user has the possibility to decide which version to keep.
+suffix_new: .OJSNEW
+
+# The absolute path to the mysqldump command. This is optional, the OJS Updater will try to deduce it.
+mysql_dump: /usr/bin/mysqldump
+
+# The absolute path to the PHP interpreter. This is optional, the OJS Updater will try to deduce it.
+php_interpreter: /usr/bin/php
+
+# A list of files or directories that should be copied for the respective OJS instance to their new version e.g.,
+# because it is a custom plugin.
+# The list contains keys, which are the directory names (!) of OJS instances. This is optional! An instance
+# does NOT have to have a key in the `custom_files`!
+# The key of the OJS instance is followed by a list of files or directories that have to be copied to the new OJS version.
+# The paths to the files/directories are RELATIVE to the OJS instance's root directory! It does NOT matter, if the
+# path ends with a slash or not!
+# If the given file/directory does not exist, the OJS Updater will print a warning, but proceed with the update!
+# There is only one key preoccupied within the `custom_files` list, which is `all`. Any file/directory given in
+# the list under this key, will be copied over to the new OJS version, independent of the OJS instance. 
+# In a minimal configuration, `custom_files` as well as the subkey `all` (which can be empty) have to exist.
+# The `all` key is optional!
+custom_files:
+  all:
+  my_awesome_journal:
+    - plugins/generic/customPlugin1/
+    - plugins/importexport/customPlugin2
+    - plugins/themes/myTheme
+    - lib/pkp/classes/form/Form.inc.php
+  another-amazing-journal:
+    - plugins/generic/customPlugin1/
