@@ -5,7 +5,7 @@
 This tool updates a single instance of an Open Journal System (OJS) on a server to a newer version. It wraps up all
 the individual steps that usually have to be carried out manually in one single command and takes additional measures to
 safely fall back. Thus, it is especially intended for OJS hosting setups which employ a
-one-installation-per-journal policy.
+one-installation-per-journal policy. Please also refer to the upgrade guide for OJS by PKP: https://docs.pkp.sfu.ca/dev/upgrade-guide/en/
 
 Before updating, the tool will automatically backup your OJS instance folder, the submission folder, and the database.
 If anything in the updating process goes wrong, the tool will reset everything to its previous state.
@@ -30,7 +30,7 @@ backup yourself at least for the first time you run the tool!
 * A running installation of OJS
 * [lxml](https://pypi.org/project/lxml/) (Optional)
 
-OJS-Updater is being tested on all currently maintained python versions (3.6+) on Linux.
+OJS-Updater is being tested on all currently maintained python versions (3.7+) and python 3.6 on Linux.
 
 ### Installation
 
