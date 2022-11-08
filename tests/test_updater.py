@@ -134,7 +134,7 @@ class TestUpdating:
         upgrade_folder_mock.assert_called()
         upgrade_db_mock.assert_called()
 
-        assert upgrade_folder_mock.call_args.args[1].version == Version(expected_version)
+        assert upgrade_folder_mock.call_args[0][1].version == Version(expected_version)
 
     def test_force_update_to_lower_version(self, upgrade_db_mock, upgrade_folder_mock, backup_mock, updater):
         journal_to_update = get_update_instance(updater, version='3.3.0.1')
@@ -150,7 +150,7 @@ class TestUpdating:
         upgrade_folder_mock.assert_called()
         backup_mock.assert_called()
 
-        assert upgrade_folder_mock.call_args.args[1].version == Version('3.3.0.0')
+        assert upgrade_folder_mock.call_args[0][1].version == Version('3.3.0.0')
 
 
 class TestJournalFolderUpgrading:

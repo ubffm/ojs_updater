@@ -144,16 +144,30 @@ Subsequently, you can simply call:
 pytest .
 ```
 
-## Contributing
+### Version compatibility
 
-If you want to contribute to the project, please search for an issue you would like to work on and make a Pull Request.
-If you find a bug or have a feature request, please open an issue.
-
-In addition to that, the OJS-Updater comes with a configuration file for the [tox](https://tox.readthedocs.io) which makes it possible to
+In addition to the tests, the OJS-Updater comes with a configuration file for [tox](https://tox.readthedocs.io), which makes it possible to
 easily test the software with several python versions simultaneously. 
 ```shell
 tox
 ```
+
+Please be aware that the tested python versions have to be compiled with `libffi-dev` (python 3.7+). Hence, if you get an error while running `tox` that says something like:
+
+```
+ModuleNotFoundError: No module named '_ctypes'
+```
+
+your Python version is missing the `libffi-dev`. 
+
+On Ubuntu, you can simply run `sudo apt-get install libffi-dev`. 
+
+When using `pyenv`, you need to re-install the problematic Python verisons with e.g. `pyenv install 3.10` after you installed `libffi-dev`.
+
+## Contributing
+
+If you want to contribute to the project, please search for an issue you would like to work on and make a Pull Request.
+If you find a bug or have a feature request, please open an issue.
 
 
 ## Acknowledgement

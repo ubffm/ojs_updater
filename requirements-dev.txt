@@ -1,4 +1,4 @@
 -r requirements.txt
 checksumdir==1.2.0
-pytest~=7.2
+pytest~=7.0
 tox~=3.0
