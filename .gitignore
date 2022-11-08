@@ -1,0 +1,7 @@
+.tox/
+**/*.egg-info/
+**/__pycache__/
+**/__pycache__/
+venv/
+
+.python-version
