@@ -13,6 +13,8 @@ If anything in the updating process goes wrong, the tool will reset everything t
 **CAUTION:** The resetting feature was yet only tested with our own servers and settings. We highly recommend doing a
 backup yourself at least for the first time you run the tool!
 
+We also created a more [extensive documentation](https://labs.ub.uni-frankfurt.de/post/930/) on the preparation and the workflow, if needed.
+
 ### Features
 
 * Automatic update to the highest (locally available) OJS version
