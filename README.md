@@ -36,7 +36,7 @@ OJS-Updater is being tested on all currently maintained python versions (3.7+) a
 
 ### Installation
 
-Simply, clone the repository and install it on your server.
+Simply clone the repository and install it on your server.
 
 ```
 git clone https://github.com/ubffm/ojs-updater.git
@@ -44,7 +44,7 @@ cd ojs-updater
 pip install .
 ```
 
-Alternatively, you cann install the package via pip:
+Alternatively, you can install the package via pip:
 
 ```
 pip install ojs_updater
@@ -164,7 +164,7 @@ your Python version is missing the `libffi-dev`.
 
 On Ubuntu, you can simply run `sudo apt-get install libffi-dev`. 
 
-When using `pyenv`, you need to re-install the problematic Python verisons with e.g. `pyenv install 3.10` after you installed `libffi-dev`.
+When using `pyenv`, you need to re-install the problematic Python versions with e.g. `pyenv install 3.10` after you installed `libffi-dev`.
 
 ## Contributing
 
@@ -172,7 +172,7 @@ If you want to contribute to the project, please search for an issue you would l
 If you find a bug or have a feature request, please open an issue.
 
 
-## Acknowledgement
+## Acknowledgment
 
 This is a project created and maintained by [BIOfid](https://www.biofid.de/en/) and 
 the [Specialised Information Service Linguistic](https://www.linguistik.de/en/).
@@ -180,5 +180,5 @@ Both are projects funded by the German Research Foundation (DFG) and located at 
 
 For further details, please refer to:
 
-- BIOfid, DFG project identifier [326024153](https://gepris.dfg.de/gepris/projekt/326061700?language=en)
+- BIOfid, DFG project identifier [326061700](https://gepris.dfg.de/gepris/projekt/326061700?language=en)
 - Fachinformationsdienst Linguistik, DFG project identifier [326024153](https://gepris.dfg.de/gepris/projekt/326024153?language=en)
