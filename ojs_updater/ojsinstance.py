@@ -71,7 +71,7 @@ class OJSInstance:
 
     def reload_config(self):
         """(re)load the config file."""
-        self.config = configparser.ConfigParser()
+        self.config = configparser.ConfigParser(interpolation=None)
         self.config.read(
             str(self.base_folder / str(self.settings['config_file']))
         )
