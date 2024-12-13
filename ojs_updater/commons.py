@@ -157,8 +157,9 @@ def mysql_restore(data, database, host, username, password, logger=None):
      the database."""
     # TODO: resolve path to mysql
     with tempfile.NamedTemporaryFile('w') as option_file:
-        print('[clint]', file=option_file)
+        print('[client]', file=option_file)
         print('password', password, file=option_file, sep='=')
+        option_file.flush()
         args_drop = ['mysql',
                      f'--defaults-extra-file={option_file.name}',
                      '--host', host,
@@ -179,7 +180,7 @@ def mysql_restore(data, database, host, username, password, logger=None):
         except subprocess.CalledProcessError as error:
             if logger is not None:
                 logger.warning('The database reimport failed!')
-        raise OSError('Connection to the database failed!') from error
+            raise OSError('Connection to the database failed!') from error
 
 
 DUMPERS = {
