@@ -1,6 +1,38 @@
 [build-system]
-requires = [
-    "setuptools>=42",
-    "wheel"
-]
+requires = ["setuptools>=61.2"]
 build-backend = "setuptools.build_meta"
+
+[project]
+name = "ojs_updater"
+version = "0.1.2"
+description = "Simple script to update multiple ojs instances on the same system."
+authors = [{name = "UB Frankfurt a. M.", email = "ublabs@ub.uni-frankfurt.de"}]
+license = {text = "MPL 2.0"}
+classifiers = [
+    "Development Status :: 4 - Beta",
+    "Environment :: Console",
+    "License :: OSI Approved :: Mozilla Public License 2.0 (MPL 2.0)",
+    "Operating System :: POSIX :: Linux",
+]
+urls = {Homepage = "https://github.com/ubffm/ojs_updater"}
+requires-python = ">=3.6"
+dependencies = [
+    "packaging == 21.0",
+    "PyYAML == 6.0.1",
+    "zc.lockfile == 2.0",
+    "schema == 0.7.4",
+]
+
+[project.readme]
+file = "README.md"
+content-type = "text/markdown"
+
+[project.scripts]
+ojs_updater = "ojs_updater.ojs_update:main"
+
+[tool.setuptools]
+platforms = ["linux"]
+include-package-data = false
+
+[tool.setuptools.packages]
+find = {namespaces = false}
