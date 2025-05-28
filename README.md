@@ -36,18 +36,18 @@ OJS-Updater is being tested on all currently maintained python versions (3.7+) a
 
 ### Installation
 
-Simply clone the repository and install it on your server.
+Installation via _pipx_ is recommended:
+
+```
+pipx install ojs_updater
+```
+
+Alternatively, simply clone the repository and install it on your server:
 
 ```
 git clone https://github.com/ubffm/ojs-updater.git
 cd ojs-updater
 pip install .
-```
-
-Alternatively, you can install the package via pip:
-
-```
-pip install ojs_updater
 ```
 
 Now you should be able to simply run to get the help message:
