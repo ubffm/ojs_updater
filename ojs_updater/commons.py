@@ -165,7 +165,7 @@ def mysql_restore(data, database, host, username, password, logger=None):
                      '--host', host,
                      '--user', username,
                      '-e',
-                     'DROP DATABASE {0}; CREATE DATABASE {0};'.format(database)]
+                     'DROP DATABASE {0}; CREATE DATABASE {0} CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci;'.format(database)]
 
         args_import = ['mysql',
                        f'--defaults-extra-file={option_file.name}',
